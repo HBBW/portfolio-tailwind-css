@@ -1,0 +1,15 @@
+services:
+  portfolio:
+    build: .
+    # Untuk Portainer kamu bisa pakai image hasil build, contoh:
+    # image: ghcr.io/hbbw/portfolio-tailwind-css:latest
+    container_name: portfolio
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    networks:
+      - portfolio
+
+networks:
+  portfolio:
+    driver: bridge
